@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="theme-color" content="#ffffff">
     <title>Dozin Company</title>
     <meta property="og:image" content="https://www.dozin.company/favicon.ico">
@@ -168,55 +167,6 @@
 </head>
 
 <body class="antialiased bg-black text-white" x-data="{ isOpen: false, scrolled: false }" @scroll.window="scrolled = window.scrollY > 0">
-
-    <!-- Lock Screen -->
-    <div id="lock-screen" class="fixed inset-0 bg-transparent flex justify-center items-center z-50 hidden">
-        <div id="popup" class="bg-neutral-800/30 backdrop-blur-md border border-neutral-500 rounded-lg p-4 text-center text-white shadow-lg w-80 h-56 flex flex-col justify-center items-center">
-            <!-- SVG Warning -->
-            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-exclamation-triangle-fill mb-3" viewBox="0 0 16 16">
-                <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5m.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
-            </svg>
-
-            <h2 class="text-base font-bold">Maintenance</h2>
-            <p class="text-sm mt-2">The website is currently under maintenance and undergoing updates</p>
-
-            <!-- Tombol -->
-            <div class="flex gap-4 mt-8 w-full">
-                <button onclick="contactEmail()" class="border border-neutral-500 text-white py-2 text-sm rounded-md w-1/2">Contact</button>
-                <button onclick="closePopup()" class="bg-white text-black py-2 text-sm font-bold rounded-md w-1/2">OK</button>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        let isLocked = false; // Ubah ke false/true buat matiin lock screen
-
-        function toggleLockScreen(state) {
-            isLocked = state;
-            const lockScreen = document.getElementById("lock-screen");
-
-            if (isLocked) {
-                lockScreen.classList.remove("hidden");
-                document.body.style.overflow = "hidden";
-            } else {
-                lockScreen.classList.add("hidden");
-                document.body.style.overflow = "auto";
-            }
-        }
-
-        function closePopup() {
-            document.getElementById("popup").classList.add("hidden"); // Popup ilang
-        }
-
-        function contactEmail() {
-            window.location.href = "mailto:contact@dozin.company"; // Buka email client
-        }
-
-        // Jalankan pas halaman load
-        document.addEventListener("DOMContentLoaded", () => {
-            toggleLockScreen(isLocked);
-        });
-    </script>
 
     <!-- Header -->
     <header id="header" class="fixed top-0 w-full z-50 transition-all duration-500 ease-in-out bg-transparent">
