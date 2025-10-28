@@ -1,454 +1,430 @@
-<!DOCTYPE html>
-<html lang="en">
+---
+layout: default
+title: Dozin Company
+---
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#ffffff">
-    <title>Dozin Company</title>
-    <meta property="og:image" content="https://www.dozin.company/favicon.ico">
+<!-- Hero Section -->
+<section id="hero" style="position:relative;width:100%;height:100vh;overflow:hidden;">
+  <div class="hero-content">
+    <h1 class="typing-text"></h1>
+  </div>
+</section>
 
-    <!-- Favicon -->
-    <link rel="icon" href="/favicon.ico?v=2" type="image/x-icon">
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" sizes="180x180" href="/IMG/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/IMG/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/IMG/favicon-16x16.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="/IMG/android-chrome-192x192.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="/IMG/android-chrome-512x512.png">
-
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Alpine.js -->
-    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Saira+Extra+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-
-    <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            "name": "Dozin Company",
-            "url": "https://www.dozin.company",
-            "logo": "https://www.dozin.company/favicon.ico",
-            "description": "Dozin Company is a technology company specializing in research and development (R&D) with a focus on artificial intelligence (AI) and robotics.",
-            "contactPoint": {
-                "@type": "ContactPoint",
-                "email": "contact@dozin.company",
-                "contactType": "customer service"
-            }
-        }
-    </script>
-
-    <meta name="description" content="Dozin Company is a technology company specializing in research and development (R&D) with a focus on artificial intelligence (AI) and robotics, delivering software solutions that drive progress across various sectors.">
-
-    <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            "name": "Dozin Company",
-            "url": "https://www.dozin.company",
-            "logo": "https://www.dozin.company/favicon.ico",
-            "sameAs": [
-                "https://www.linkedin.com/company/dozin-company",
-                "https://twitter.com/dozin_company"
-            ],
-            "department": [{
-                    "@type": "WebPage",
-                    "name": "Company",
-                    "url": "https://www.dozin.company/about-us"
-                },
-                {
-                    "@type": "WebPage",
-                    "name": "Project",
-                    "url": "https://www.dozin.company/project"
-                },
-                {
-                    "@type": "WebPage",
-                    "name": "Software",
-                    "url": "https://www.dozin.company/software"
-                },
-                {
-                    "@type": "WebPage",
-                    "name": "Artificial Intelligence",
-                    "url": "https://www.dozin.company/AI"
-                },
-                {
-                    "@type": "WebPage",
-                    "name": "Research & Development",
-                    "url": "https://www.dozin.company/RND"
-                },
-                {
-                    "@type": "WebPage",
-                    "name": "Services",
-                    "url": "https://www.dozin.company/services"
-                },
-                {
-                    "@type": "WebPage",
-                    "name": "Contact",
-                    "url": "https://www.dozin.company/contact"
-                }
-            ],
-            "potentialAction": {
-                "@type": "SearchAction",
-                "target": "https://www.dozin.company/search?q={search_term_string}",
-                "query-input": "required name=search_term_string"
-            }
-        }
-    </script>
-
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FL3TD89WX0"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-
-        gtag('config', 'G-FL3TD89WX0');
-    </script>
-
-
-    <style>
-        body {
-            font-family: "Montserrat", sans-serif;
-            font-optical-sizing: auto;
-            font-weight: 400;
-            font-style: normal;
-        }
-
-        .montserrat-regular {
-            font-family: "Montserrat", sans-serif;
-            font-optical-sizing: auto;
-            font-weight: 400;
-            font-style: normal;
-        }
-
-        /* Animasi pulse dengan blur */
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-                opacity: 0.7;
-                filter: blur(0);
-            }
-
-            50% {
-                transform: scale(1.5);
-                opacity: 0.4;
-                filter: blur(4px);
-            }
-
-            100% {
-                transform: scale(1.8);
-                opacity: 0;
-                filter: blur(8px);
-            }
-        }
-
-        /* Efek bulat saat tap */
-        .tap-effect:active::after {
-            content: '';
-            position: absolute;
-            width: 60px;
-            height: 60px;
-            background: rgba(255, 255, 255, 0.15);
-            border-radius: 50%;
-            animation: pulse 0.5s ease-out;
-        }
-    </style>
-</head>
-
-<body class="antialiased bg-white text-white" x-data="{ isOpen: false, scrolled: false }" @scroll.window="scrolled = window.scrollY > 0">
-
-<!-- Header -->
-<header id="header" class="fixed top-0 w-full z-50 transition-all duration-500 ease-in-out bg-transparent">
-    <div class="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between">
-        <!-- Logo -->
-        <a href="/" class="text-2xl font-bold">
-            <img src="https://raw.githubusercontent.com/dzc11/d/refs/heads/main/IMG/IMG_20250713_111903.png" alt="Logo" class="h-8">
-        </a>
-        
-        <!-- Hamburger Menu -->
-        <button id="menuButton" class="relative p-2 hover:bg-neutral-500/10 hover:rounded-full focus:outline-none z-50">
-            <svg id="menuIcon" class="w-6 h-6 transition-colors duration-300" fill="none" stroke="white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 6h16M4 12h16M4 18h16"></path>
-            </svg>
-        </button>
-    </div>
-</header>
-
-<!-- Overlay -->
-<div id="overlay" class="fixed inset-0 bg-black/50 z-40 opacity-0 invisible transition-opacity duration-500 ease-in-out"></div>
-
-<!-- Menu Slide-in -->
-<div id="menu" class="fixed inset-y-0 right-0 bg-white text-black shadow-lg z-50 transform translate-x-full transition-transform duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] w-full md:w-64 md:max-w-[320px]">
-    <!-- Close Button -->
-    <button id="closeButton" class="absolute top-2 right-4 bg-neutral-200/60 p-2 rounded-full">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M6 18L18 6M6 6l12 12"></path>
-        </svg>
-    </button>
-
-    <!-- Menu Items -->
-    <nav class="mt-16 space-y-1 px-6">
-        <a href="/page/company" class="block py-3 text-sm font-bold uppercase hover:text-gray-400 transition border-b border-neutral-500/10">Company</a>
-        <a href="/project" class="block py-3 text-sm font-bold uppercase hover:text-gray-400 transition border-b border-neutral-500/10">Project</a>
-        <a href="/software" class="block py-3 text-sm font-bold uppercase hover:text-gray-400 transition border-b border-neutral-500/10">Software</a>
-        <a href="/AI" class="block py-3 text-sm font-bold uppercase hover:text-gray-400 transition border-b border-neutral-500/10">Artificial Intelligence</a>
-        <a href="/RND" class="block py-3 text-sm font-bold uppercase hover:text-gray-400 transition border-b border-neutral-500/10">Research & Development</a>
-        <a href="/services" class="block py-3 text-sm font-bold uppercase hover:text-gray-400 transition border-b border-neutral-500/10">Services</a>
-        <a href="/contact" class="block py-3 text-sm font-bold uppercase hover:text-gray-400 transition">Contact</a>
-    </nav>
-</div>
-
-<!-- JavaScript -->
+<!-- Three.js -->
+<script src="https://cdn.jsdelivr.net/npm/three@0.152.0/build/three.min.js"></script>
 <script>
-document.addEventListener("DOMContentLoaded", function() {
-    const header = document.getElementById("header");
-    const menu = document.getElementById("menu");
-    const overlay = document.getElementById("overlay");
-    const menuButton = document.getElementById("menuButton");
-    const closeButton = document.getElementById("closeButton");
-    const menuIcon = document.getElementById("menuIcon");
-    
-    let isMenuOpen = false;
+// === Setup dasar Three.js ===
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
+camera.position.z = 25;
 
-    window.addEventListener("scroll", function() {
-        if (window.scrollY > 50) {
-            header.classList.add("backdrop-blur-lg", "bg-white/60");
-            header.classList.remove("bg-transparent");
-            menuIcon.setAttribute("stroke", "black");
-        } else {
-            header.classList.remove("backdrop-blur-lg", "bg-white/60");
-            header.classList.add("bg-transparent");
-            menuIcon.setAttribute("stroke", "white");
-        }
-    });
+const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+renderer.setSize(window.innerWidth, window.innerHeight);
+document.getElementById("hero").appendChild(renderer.domElement);
 
-    // Function buat toggle menu
-    function toggleMenu(show) {
-        if (show) {
-            menu.classList.remove("translate-x-full");
-            overlay.classList.remove("opacity-0", "invisible");
-            
-            if (!isMenuOpen) {
-                history.pushState({ menuOpen: true }, ""); // Tambah state ke history
-            }
-            
-            isMenuOpen = true;
-        } else {
-            menu.classList.add("translate-x-full");
-            overlay.classList.add("opacity-0", "invisible");
+// === Partikel ===
+const particleCount = 9000;
+const positions = new Float32Array(particleCount * 3);
+const startPositions = new Float32Array(particleCount * 3);
+const targetPositions = new Float32Array(particleCount * 3);
 
-            if (isMenuOpen) {
-                history.back(); // Kembali ke state sebelumnya biar back button tetap work
-            }
+// === Posisi acak awal ===
+function randomizeStart() {
+  for (let i = 0; i < particleCount * 3; i++) {
+    const r = 40;
+    startPositions[i] = (Math.random() - 0.5) * r;
+    positions[i] = startPositions[i];
+  }
+}
+randomizeStart();
 
-            isMenuOpen = false;
-        }
+// === Bentuk Efek Doppler ke kiri + Huruf Z normal (lebih tebal) ===
+function generateDopplerZ() {
+  const zRatio = 0.18; // sedikit lebih besar porsi Z-nya
+  const total = particleCount;
+  const circleCount = 4; // hanya 4 lingkaran
+  const circleGap = 2.2; // lebih lebar antar lingkaran
+  const baseRadius = 3.5; // sedikit lebih besar
+  const dopplerShift = 1.2; // geseran ke kiri
+  const zCenterX = 0;
+  const zCenterY = 0;
+
+  let idx = 0;
+  for (let i = 0; i < total; i++) {
+    let x = 0, y = 0, z = 0;
+    const t = i / total;
+
+    if (t < zRatio) {
+      // ===== Huruf Z lebih tebal =====
+      const width = 3.2;
+      const height = 3.2;
+      const thickness = 0.35; // 🔹 Lebih tebal dari sebelumnya
+      const seg = Math.floor((t / zRatio) * 3);
+
+      if (seg === 0) {
+        // Garis atas
+        x = (Math.random() - 0.5) * width;
+        y = height / 2 + (Math.random() - 0.5) * thickness;
+      } 
+      else if (seg === 1) {
+        // Diagonal
+        const p = Math.random();
+        x = -width / 2 + p * width + (Math.random() - 0.5) * thickness * 2;
+        y = height / 2 - p * height + (Math.random() - 0.5) * thickness * 2;
+      } 
+      else {
+        // Garis bawah
+        x = (Math.random() - 0.5) * width;
+        y = -height / 2 + (Math.random() - 0.5) * thickness;
+      }
+
+      // Skala sedikit lebih besar biar pas
+      x *= 0.8;
+      y *= 0.8;
+      x += zCenterX;
+      y += zCenterY;
+      z = (Math.random() - 0.5) * 0.4; // lebih “tebal” di sumbu Z
     }
 
-    // Event listener buat buka/tutup menu
-    menuButton.addEventListener("click", () => toggleMenu(true));
-    closeButton.addEventListener("click", () => toggleMenu(false));
-    overlay.addEventListener("click", () => toggleMenu(false));
+    // ===== Efek Lingkaran Efek Doppler (lebih tebal) =====
+    else {
+      const p = (t - zRatio) / (1 - zRatio);
+      const ringIndex = Math.floor(p * circleCount);
+      const angle = Math.random() * Math.PI * 2;
+      
+      const radius = baseRadius + ringIndex * circleGap;
+      const shift = ringIndex * dopplerShift;
+      const cx = -shift;
 
-    // Deteksi tombol back sistem HP buat nutup menu dulu sebelum keluar halaman
-    window.addEventListener("popstate", function(event) {
-        if (isMenuOpen) {
-            toggleMenu(false);
-        }
-    });
+      // 🔹 Tambah variasi ketebalan
+      const radialJitter = (Math.random() - 0.5) * 0.8; 
+      const verticalJitter = (Math.random() - 0.5) * 0.8;
+
+      x = Math.cos(angle) * (radius + radialJitter) + cx;
+      y = Math.sin(angle) * (radius + radialJitter) + verticalJitter * 0.6;
+      z = (Math.random() - 0.5) * 0.5; // lebih dalam di sumbu Z
+    }
+
+    targetPositions[idx] = x;
+    targetPositions[idx + 1] = y;
+    targetPositions[idx + 2] = z;
+    idx += 3;
+  }
+}
+generateDopplerZ();
+
+// === Geometry & Material ===
+const geometry = new THREE.BufferGeometry();
+geometry.setAttribute("position", new THREE.BufferAttribute(positions, 3));
+
+const material = new THREE.PointsMaterial({
+  color: 0xffffff,
+  size: 0.06, // sedikit lebih besar
+  transparent: true,
+  opacity: 0.9
 });
+
+const points = new THREE.Points(geometry, material);
+points.rotation.y = Math.PI;
+scene.add(points);
+
+// === Animasi smooth looping ===
+const clock = new THREE.Clock();
+
+function animate() {
+  requestAnimationFrame(animate);
+  const t = clock.getElapsedTime();
+
+  const progress = (Math.sin(t * Math.PI * 2 / 12) + 1) / 2;
+
+  const pos = geometry.attributes.position.array;
+  for (let i = 0; i < particleCount * 3; i++) {
+    pos[i] = THREE.MathUtils.lerp(startPositions[i], targetPositions[i], progress);
+  }
+
+  camera.position.z = 25 - progress * 8;
+  points.rotation.y = Math.PI + Math.sin(t * 0.2) * 0.05;
+  points.rotation.x = Math.sin(t * 0.5) * 0.2;
+
+  geometry.attributes.position.needsUpdate = true;
+  renderer.render(scene, camera);
+}
+animate();
+
+// === Responsif ===
+window.addEventListener('resize', () => {
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(window.innerWidth, window.innerHeight);
+});
+
+// === Styling & Typing ===
+const style = document.createElement('style');
+style.innerHTML = `
+  #hero { background: radial-gradient(circle at center, #050509 0%, #000 100%); }
+  #hero canvas { position:absolute; top:0; left:0; width:100%; height:100%; z-index:1; }
+  .hero-content {
+    position:relative; z-index:2; color:#fff; text-align:center;
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    height:100%; font-family:Inter,system-ui,sans-serif;
+  }
+  .typing-text {
+    font-size:3.5rem; font-weight:900; white-space:pre;
+    background:linear-gradient(90deg,#fff,#b0b0b0);
+    -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+    overflow:hidden;
+    line-height:0.9;
+  }
+`;
+document.head.appendChild(style);
+
+// === Typing Animation ===
+const textLines = ["Think.", "Move.", "Evolve."];
+const typingSpeed = 120;
+const linePause = 800;
+const target = document.querySelector('.typing-text');
+
+let lineIndex = 0;
+let charIndex = 0;
+
+function typeLine() {
+  if (lineIndex >= textLines.length) return;
+  const currentLine = textLines[lineIndex];
+  if (charIndex < currentLine.length) {
+    target.textContent += currentLine.charAt(charIndex);
+    charIndex++;
+    setTimeout(typeLine, typingSpeed);
+  } else {
+    target.textContent += "\n";
+    lineIndex++;
+    charIndex = 0;
+    setTimeout(typeLine, linePause);
+  }
+}
+typeLine();
 </script>
 
-    <!-- Hero Section -->
-    <section class="relative min-h-[60vh] w-full bg-cover bg-center py-20" style="background-image: url('IMG/IMG_20250322_054839.jpg');">
-        <div class="absolute inset-0 bg-black/50"></div>
-        <div class="absolute inset-0 flex flex-col items-center justify-center text-white px-4 text-center">
-            <h1 class="text-3xl montserrat-regular md:text-6xl font-bold">THINK BEYOND. CODE THE IMPOSSIBLE</h1>
-            <p class="mt-4 text-sm md:text-xl">DELAWARE, UNITED STATES</p>
-            <button class="mt-2 text-sm font-bold px-6 py-2 flex items-center space-x-2 transition">
-                <span>WATCH VIDEO</span>
-                <div class="w-5 h-5 border border-white rounded-full flex items-center justify-center">
-                    <svg class="w-2.5 h-2.5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M7 4v16l13-8L7 4z" />
-                    </svg>
+
+<!-- Overlay Scroll Up Hint (di bawah, transparan) -->
+<div id="scrollHint" class="fixed bottom-5 left-0 w-full flex flex-col items-center justify-end z-[9999] text-white transition-opacity duration-500 pointer-events-none">
+  <div class="flex flex-col items-center">
+    <div class="finger-animation mb-2"></div>
+    <p class="text-sm uppercase tracking-widest text-white">Scroll Up</p>
+  </div>
+</div>
+
+<!-- Animasi jari -->
+<style>
+  .finger-animation {
+    width: 36px;   
+    height: 65px;
+    border: 2px solid white;
+    border-radius: 22px;
+    position: relative;
+    box-sizing: border-box;
+  }
+
+  .finger-animation::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 10px;
+    width: 16px;
+    height: 16px;
+    background: white;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    animation: scroll-up 1.5s ease-in-out infinite;
+  }
+
+  @keyframes scroll-up {
+    0% { bottom: 10px; opacity: 1; }
+    70% { bottom: 40px; opacity: 0; }
+    100% { bottom: 10px; opacity: 0; }
+  }
+</style>
+
+<!-- JS: Hide overlay hanya saat user interaksi -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const scrollHint = document.getElementById("scrollHint");
+
+    const hideScrollHint = () => {
+      scrollHint.style.opacity = "0";
+      setTimeout(() => scrollHint.style.display = "none", 500);
+
+      window.removeEventListener("scroll", hideScrollHint);
+      window.removeEventListener("wheel", hideScrollHint);
+      window.removeEventListener("touchstart", hideScrollHint);
+      window.removeEventListener("touchmove", hideScrollHint);
+    };
+
+    // Listener interaktif
+    window.addEventListener("scroll", hideScrollHint);
+    window.addEventListener("wheel", hideScrollHint);
+    window.addEventListener("touchstart", hideScrollHint);
+    window.addEventListener("touchmove", hideScrollHint);
+  });
+</script>
+
+
+<section class="bg-black text-white flex justify-center py-24 px-6">
+  <div class="max-w-4xl text-left">
+    <h1 class="bitcount-grid-single text-4xl font-bold leading-[0.95] mb-8 text-white">
+      <span>Dozin Company</span><br/>
+      <span class="text-lg">Think. Move. Evolve.</span>
+    </h1>
+
+<a 
+  href="/about-us"
+  class="text-white font-semibold text-base border-b-2 border-white pb-[2px] transition-all duration-300 hover:opacity-80 hover:border-gray-400"
+>
+  Who Are We?
+</a>
+
+    <div class="mt-16">
+      <h2 class="bitcount-grid-single text-2xl font-bold leading-[1.05] mb-4 text-white">
+        Innovating Robotics and AI Technologies
+      </h2>
+
+      <p class="text-base leading-[1.4]">
+        At Dozin Company, we turn bold concepts into intelligent software, robotics, and AI solutions. Our R&D-driven approach ensures products are adaptable, high-performing, and ready to address the dynamic challenges of a rapidly evolving digital world.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Our Software -->
+<section class="flex flex-col items-center text-center py-16 px-6">
+    <div class="max-w-4xl mx-auto">
+        <h2 class="text-2xl md:text-5xl uppercase font-bold text-white">Our Software</h2>
+        <a href="#" class="flex items-center justify-center text-sm md:text-md gap-2 text-white font-thin uppercase hover:underline">
+            SEE MORE
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 md:w-6 md:h-6" fill="currentColor" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0z" />
+            </svg>
+        </a>
+    </div>
+</section>
+<!-- end pin -->
+
+    <!-- Pricing Section -->
+    <section class="relative -mt-10 px-6 md:px-20">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+            <!-- Card 1 -->
+            <div class="p-6 bg-neutral-700 bg-opacity-30 backdrop-blur-md border border-neutral-500/50 rounded-lg text-white text-left">
+                <h2 class="text-lg font-bold">PraetorIQ</h2>
+                <p class="text-sm text-neutral-200">AI legal assistant that reads, analyzes, and simplifies complex laws — empowering faster, smarter decisions.</p>
+                <p class="mt-2 text-xs font-bold">Beta Version VWE.20.1.3.25 </p>
+                <div class="mt-4 flex space-x-3">
+                    <button class="px-4 py-2 bg-white text-black text-sm font-bold rounded">TRY BETA</button>
+                    <button class="px-4 py-2 border border-white text-white text-sm font-bold rounded">DOWNLOAD</button>
                 </div>
-            </button>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="p-6 bg-neutral-700 bg-opacity-30 backdrop-blur-md border border-neutral-500/50 rounded-lg text-white text-left">
+                <h2 class="text-lg font-bold">GULDNBIT - Digital Wallet</h2>
+                <p class="text-sm text-neutral-200">GULDNBIT is a cryptocurrency-based digital wallet by Dozin Company, designed for secure, fast, and easy everyday transactions.</p>
+                <p class="mt-2 text-xs font-bold">Beta Version VPU.000.2.24</p>
+                <div class="mt-4 flex space-x-3">
+                    <button class="px-4 py-2 bg-white text-black text-sm font-bold rounded">TRY BETA</button>
+                    <button class="px-4 py-2 border border-white text-white text-sm font-bold rounded">DOWNLOAD</button>
+                </div>
+            </div>
+
         </div>
     </section>
 
 
- <!-- Our Projects -->
-<section class="flex flex-col items-center text-center py-16 px-6">
-    <h2 class="text-2xl md:text-5xl uppercase font-bold text-neutral-900">Our Projects</h2>
-    <p class="text-neutral-700 text-xs md:max-w-2xl md:text-sm p-4">
-        Dozin Company showcases its commitment to innovation through a range of initiatives, from advanced AI solutions to cutting-edge digital platforms. Explore our work and discover how we’re shaping the future through technology.
-    </p>
-    <a href="#" class="flex items-center text-xs md:text-md gap-2 text-neutral-900 font-bold uppercase hover:underline">
-        VIEW MORE
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 md:w-6 md:h-6" fill="currentColor" viewBox="0 0 16 16">
-            <path fill-rule="evenodd" d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0z" />
-        </svg>
-    </a>
-</section>
-
-
-<!-- card -->
-<section class="text-neutral-900 py-12 px-6 md:px-16">
-    <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-12">
-        <!-- Gambar dulu di mobile -->
-        <div class="w-full md:hidden">
-            <img src="img/2.jpg" alt="picture" class="w-full rounded-lg">
-        </div>
-
-        <!-- Kiri: Gambar di desktop -->
-        <div class="md:w-1/2 hidden md:block">
-            <img src="img/2.jpg" alt="picture" class="w-full rounded-lg">
-        </div>
-
-        <!-- Kanan: Text -->
-        <div class="md:w-1/2 w-full text-left">
-            <h2 class="text-2xl font-bold mb-4">OPEN SOURCE PROJECT</h2>
-            <p class="text-xs md:text-sm text-neutral-700 mb-4">Dozin Company strives to advance innovation and promote transparency through our open-source projects. This initiative serves as a platform for professionals and the global community to collaborate, share knowledge, and drive the development of impactful, sustainable technology solutions. By embracing open-source principles, we aim to foster a culture of continuous improvement and collective growth, empowering individuals and organisations to shape the future of technology together.</p>
-            <div class="mt-4 flex space-x-4">
-                <a href="#" class="text-xs font-bold text-neutral-900 hover:underline flex items-center">
-                    JOIN OUR PROJECT<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right ml-1" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708" />
-                    </svg>
-                </a>
-
-                <a href="#" class="text-xs font-bold text-neutral-900 hover:underline flex items-center">
-                    LEARN MORE
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right ml-1" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708" />
-                    </svg>
-                </a>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-
-<!-- Picture in Text Section -->
-<section class="relative w-full h-[700px] md:h-[500px] bg-cover bg-center flex items-center text-white px-6 md:px-16" 
-  style="background-image: url('img/hero.jpg');">
-  <div class="absolute inset-0 bg-black/50"></div> <!-- Overlay supaya teks lebih kebaca -->
-  <div class="relative max-w-3xl">
-    <h1 class="text-2xl md:text-4xl font-bold leading-tight">THE HOEKMEER DISTRICT PROJECT</h1>
-<p class="mt-2 text-xs md:text-lg leading-relaxed md:leading-normal">
-    HOEKMEER DISTRICT is an innovative smart district project based on blockchain technology, integrating innovation, the digital economy, and sustainability. Designed around a distinctive rectangular lake, this district serves as a hub for smart living, crypto-based finance, and Web3 businesses.
-</p>
-<p class="mt-2 text-xs md:text-lg leading-relaxed md:leading-normal">
-    The project is being developed in collaboration with Ahtera International (Ahtera Studio for urban planning) and Dozin Company, which is responsible for digitalisation and smart city features.
-</p>
-
-    <button class="mt-4 px-4 p-2 border border-white  rounded-md text-white text-sm hover:bg-white hover:text-black transition">
-      VIEW THE PROJECT
-    </button>
-  </div>
-</section>
-
-<!-- card -->
-<section class="text-neutral-900 py-12 px-6 md:px-16">
-    <div class="max-w-5xl mx-auto flex flex-col md:flex-row-reverse items-center gap-12">
-        <!-- Gambar dulu di mobile -->
-        <div class="w-full md:hidden">
-            <img src="img/1.jpg" alt="pictures" class="w-full rounded-lg">
-        </div>
-
-        <!-- Kanan: Gambar di desktop -->
-        <div class="md:w-1/2 hidden md:block">
-            <img src="img/1.jpg" alt="pictures" class="w-full rounded-lg">
-        </div>
-
-        <!-- Kiri: Text -->
-        <div class="md:w-1/2 w-full text-left">
-            <h2 class="text-2xl font-bold mb-4">The Portavera: Smart City of the Future</h2>
-            <p class="text-xs md:text-sm text-neutral-700 mb-4">The Portavera is an innovative smart city project designed by Dozin Company and Ahtera Studio. Combining smart technology with sustainable urban design, this project aims to create a future-forward city that is efficient, eco-friendly, and comfortable to live in. Launched in 2024, The Portavera will set the standard for modern cities, integrating advanced technological solutions for a better quality of life.</p>
-            <div class="mt-4 flex space-x-4">
-                <a href="#" class="text-xs font-bold text-neutral-900 hover:underline flex items-center">
-                    VIEW THE PROJECT<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right ml-1" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708" />
-                    </svg>
-                </a>
-
-                <a href="#" class="text-xs font-bold text-neutral-900 hover:underline flex items-center">
-                    LEARN MORE
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right ml-1" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708" />
-                    </svg>
-                </a>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-<!-- Footer -->
-<footer class="bg-neutral-100 text-neutral-900 text-center p-6 text-xs">
-    <div class="flex flex-col md:flex-row md:justify-between md:items-start space-y-6 md:space-y-0">
-
-        <!-- Bagian Signup -->
-        <div class="order-1 md:order-2 flex flex-col space-y-2 md:flex-row md:items-center md:space-x-4">
-
-            <!-- Teks Subscribe (Desktop) -->
-            <p class="text-xs md:w-48 md:text-right hidden md:block">
-                Subscribe for updates from <br> Dozin Company
-            </p>
-
-          <!-- Form Email -->
-<div class="flex flex-col items-center md:items-start">
-    <!-- Teks Subscribe (Hanya di Mobile) -->
-    <p class="text-xs pb-4 md:hidden">Subscribe for updates from Dozin Company</p>
-
-    <div class="flex justify-center items-center space-x-2 w-full">
-      <input type="email" placeholder="Email" class="bg-transparent border-b-[1.3px] border-neutral-900 outline-none text-neutral-900 px-2 py-1 w-4/5 md:w-3/2 text-xs pb-2">
-
-        <!-- Tombol Subscribe + Icon -->
-        <button class="text-neutral-900 pl-4 font-bold text-[10px] flex items-center space-x-1">
-            <span>SUBSCRIBE</span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
-                <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708" />
+<!-- Our Projects -->
+<section class="flex flex-col items-center text-center pt-20 px-6">
+    <div class="max-w-4xl mx-auto">
+        <h2 class="text-2xl md:text-5xl uppercase font-bold text-white">Our Projects</h2>
+        <a href="#" class="flex items-center justify-center text-sm md:text-md gap-2 text-white font-thin uppercase hover:underline">
+            SEE MORE
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 md:w-6 md:h-6" fill="currentColor" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0z" />
             </svg>
-        </button>
+        </a>
     </div>
+</section>
+<!-- end pin -->
 
-    <!-- Privacy Policy (Tetap Ada) -->
-    <p class="text-xs mt-4">By clicking Subscribe, you agree to our <span class="font-bold">Privacy Policy</span></p>
-</div>
-
+<!-- Main Content -->
+<section class="bg-black text-white py-0">
+    <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-12">
+        <!-- Gambar mobile (nempel pinggir, no rounded) -->
+        <div class="w-full md:hidden">
+            <img src="img/2.jpg" alt="picture" class="w-full grayscale">
         </div>
 
-        <!-- Bagian Kiri (Links + Copyright) -->
-        <div class="order-2 md:order-1 flex flex-col space-y-4 md:text-left">
-            <ul class="flex flex-col md:flex-row md:space-x-4 space-y-2 md:space-y-0">
-                <li><a href="https://www.starlink.com" class="hover:underline">Careers</a></li>
-                <li><a href="/page/privacy-legal" class="hover:underline">Privacy & Legal</a></li>
-                <li><a href="#" class="hover:underline">Privacy Preferences</a></li>
-                <li><a href="#" class="hover:underline">Contact</a></li>
-            </ul>
-                <div>
-                    <p class="text-xs pt-2 md:pt-0">Delaware, United States of America</p>
-                </div>
-            <div class="md:flex items-center justify-center md:justify-start space-x-2">
-                <p>Dozin Company © 2025</p>
-                <p>Part of Ahtera Group</p>
-            </div>          
+        <!-- Gambar desktop (no rounded) -->
+        <div class="md:w-1/2 hidden md:block">
+            <img src="img/2.jpg" alt="picture" class="w-full grayscale">
         </div>
 
-    </div>
-</footer>
-</body>
+        <!-- Text (dengan padding) -->
+        <div class="md:w-1/2 w-full text-left px-6 md:px-16">
+            <h2 class="text-2xl uppercase font-bold mb-4">OPEN SOURCE PROJECT</h2>
+            <p class="text-xs md:text-sm text-neutral-200 mb-4">
+                Dozin Company strives to advance innovation and promote transparency through our open-source projects. This initiative serves as a platform for professionals and the global community to collaborate, share knowledge, and drive the development of impactful, sustainable technology solutions. By embracing open-source principles, we aim to foster a culture of continuous improvement and collective growth, empowering individuals and organisations to shape the future of technology together.
+            </p>
+            <div class="mt-4 flex space-x-4">
+                <a href="#" class="text-sm uppercase  font-bold text-white hover:underline flex items-center">
+                    join our open project
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right ml-1" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708" />
+                    </svg>
+                </a>
 
-</html>
+                <a href="#" class="text-sm font-bold text-white hover:underline flex items-center">
+                    LEARN MORE
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right ml-1" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="bg-black text-white py-12">
+    <div class="max-w-5xl mx-auto flex flex-col md:flex-row-reverse items-center gap-12">
+        <!-- Gambar mobile (nempel pinggir, no px, no rounded) -->
+        <div class="w-full md:hidden">
+            <img src="img/1.jpg" alt="pictures" class="w-full">
+        </div>
+
+        <!-- Gambar desktop (no rounded) -->
+        <div class="md:w-1/2 hidden md:block">
+            <img src="img/1.jpg" alt="pictures" class="w-full">
+        </div>
+
+        <!-- Text (dengan padding) -->
+        <div class="md:w-1/2 w-full text-left px-6 md:px-16">
+            <h2 class="text-2xl uppercase font-bold mb-4">Climate Connect</h2>
+            <p class="text-xs md:text-sm text-neutral-200 mb-4">
+                Climate Connect by Dozin Company leverages AI, robotics, and IoT to monitor and reduce environmental impact worldwide. From real-time pollution tracking to smart energy management, our platform empowers communities, governments, and businesses to make data-driven decisions for a sustainable future. Together, we connect people and technology to protect our planet.
+            </p>
+            <div class="mt-4 flex space-x-4">
+                <a href="#" class="text-sm font-bold uppercase text-white hover:underline flex items-center">
+                    Discover the Project
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right ml-1" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708" />
+                    </svg>
+                </a>
+
+                <a href="#" class="text-sm font-bold text-white hover:underline flex items-center">
+                    LEARN MORE
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right ml-1" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
