@@ -1,11 +1,229 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ page.title }}</title>
-  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#ffffff">
+    <title>Dozin Company</title>
+    <meta property="og:image" content="https://www.dozin.company/favicon.ico">
+
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico?v=2" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="/IMG/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/IMG/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/IMG/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/IMG/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/IMG/android-chrome-512x512.png">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Alpine.js -->
+    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Saira+Extra+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Single:wght@100..900&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Dozin Company",
+            "url": "https://www.dozin.company",
+            "logo": "https://www.dozin.company/favicon.ico",
+            "description": "Dozin Company is a technology company specializing in research and development (R&D) with a focus on artificial intelligence (AI) and robotics.",
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "email": "contact@dozin.company",
+                "contactType": "customer service"
+            }
+        }
+    </script>
+
+    <meta name="description" content="Dozin Company is a technology company specializing in research and development (R&D) with a focus on artificial intelligence (AI) and robotics, delivering software solutions that drive progress across various sectors.">
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Dozin Company",
+            "url": "https://www.dozin.company",
+            "logo": "https://www.dozin.company/favicon.ico",
+            "sameAs": [
+                "https://www.linkedin.com/company/dozin-company",
+                "https://twitter.com/dozin_company"
+            ],
+            "department": [{
+                    "@type": "WebPage",
+                    "name": "Company",
+                    "url": "https://www.dozin.company/about-us"
+                },
+                {
+                    "@type": "WebPage",
+                    "name": "Project",
+                    "url": "https://www.dozin.company/project"
+                },
+                {
+                    "@type": "WebPage",
+                    "name": "Software",
+                    "url": "https://www.dozin.company/software"
+                },
+                {
+                    "@type": "WebPage",
+                    "name": "Artificial Intelligence",
+                    "url": "https://www.dozin.company/AI"
+                },
+                {
+                    "@type": "WebPage",
+                    "name": "Research & Development",
+                    "url": "https://www.dozin.company/RND"
+                },
+                {
+                    "@type": "WebPage",
+                    "name": "Services",
+                    "url": "https://www.dozin.company/services"
+                },
+                {
+                    "@type": "WebPage",
+                    "name": "Contact",
+                    "url": "https://www.dozin.company/contact"
+                }
+            ],
+            "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://www.dozin.company/search?q={search_term_string}",
+                "query-input": "required name=search_term_string"
+            }
+        }
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FL3TD89WX0"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-FL3TD89WX0');
+    </script>
+
+
+    <style>
+
+/* 🌐 Default font untuk semua elemen */
+body {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* 🧠 Headings pakai Bitcount Grid Single */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Bitcount Grid Single", system-ui;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0,
+    "CRSV" 0.5,
+    "ELSH" 0,
+    "ELXP" 0;
+}
+
+/* 💬 Paragraf & span pakai Courier Prime */
+p, a, div {
+  font-family: "Courier Prime", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Optional – Bold dan italic behavior */
+p strong {
+  font-weight: 700;
+}
+
+p em {
+  font-style: italic;
+}
+
+.bitcount-grid-single {
+  font-family: "Bitcount Grid Single", system-ui;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0,
+    "CRSV" 0.5,
+    "ELSH" 0,
+    "ELXP" 0;
+}
+
+.courier-prime-regular {
+  font-family: "Courier Prime", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.courier-prime-bold {
+  font-family: "Courier Prime", monospace;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.courier-prime-regular-italic {
+  font-family: "Courier Prime", monospace;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.courier-prime-bold-italic {
+  font-family: "Courier Prime", monospace;
+  font-weight: 700;
+  font-style: italic;
+}
+
+
+        /* Animasi pulse dengan blur */
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 0.7;
+                filter: blur(0);
+            }
+
+            50% {
+                transform: scale(1.5);
+                opacity: 0.4;
+                filter: blur(4px);
+            }
+
+            100% {
+                transform: scale(1.8);
+                opacity: 0;
+                filter: blur(8px);
+            }
+        }
+
+        /* Efek bulat saat tap */
+        .tap-effect:active::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+            animation: pulse 0.5s ease-out;
+        }
+    </style>
 </head>
+  
 <body class="bg-gray-50 text-gray-800">
   {% include header.html %}
   <main class="min-h-screen">
