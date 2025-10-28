@@ -1,7 +1,314 @@
----
-layout: default
-title: Dozin Company
----
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#ffffff">
+    <title>Dozin Company</title>
+    <meta property="og:image" content="https://www.dozin.company/favicon.ico">
+
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico?v=2" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="/IMG/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/IMG/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/IMG/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/IMG/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/IMG/android-chrome-512x512.png">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Alpine.js -->
+    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Saira+Extra+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Single:wght@100..900&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Dozin Company",
+            "url": "https://www.dozin.company",
+            "logo": "https://www.dozin.company/favicon.ico",
+            "description": "Dozin Company is a technology company specializing in research and development (R&D) with a focus on artificial intelligence (AI) and robotics.",
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "email": "contact@dozin.company",
+                "contactType": "customer service"
+            }
+        }
+    </script>
+
+    <meta name="description" content="Dozin Company is a technology company specializing in research and development (R&D) with a focus on artificial intelligence (AI) and robotics, delivering software solutions that drive progress across various sectors.">
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Dozin Company",
+            "url": "https://www.dozin.company",
+            "logo": "https://www.dozin.company/favicon.ico",
+            "sameAs": [
+                "https://www.linkedin.com/company/dozin-company",
+                "https://twitter.com/dozin_company"
+            ],
+            "department": [{
+                    "@type": "WebPage",
+                    "name": "Company",
+                    "url": "https://www.dozin.company/about-us"
+                },
+                {
+                    "@type": "WebPage",
+                    "name": "Project",
+                    "url": "https://www.dozin.company/project"
+                },
+                {
+                    "@type": "WebPage",
+                    "name": "Software",
+                    "url": "https://www.dozin.company/software"
+                },
+                {
+                    "@type": "WebPage",
+                    "name": "Artificial Intelligence",
+                    "url": "https://www.dozin.company/AI"
+                },
+                {
+                    "@type": "WebPage",
+                    "name": "Research & Development",
+                    "url": "https://www.dozin.company/RND"
+                },
+                {
+                    "@type": "WebPage",
+                    "name": "Services",
+                    "url": "https://www.dozin.company/services"
+                },
+                {
+                    "@type": "WebPage",
+                    "name": "Contact",
+                    "url": "https://www.dozin.company/contact"
+                }
+            ],
+            "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://www.dozin.company/search?q={search_term_string}",
+                "query-input": "required name=search_term_string"
+            }
+        }
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FL3TD89WX0"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-FL3TD89WX0');
+    </script>
+
+
+    <style>
+
+/* 🌐 Default font untuk semua elemen */
+body {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* 🧠 Headings pakai Bitcount Grid Single */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Bitcount Grid Single", system-ui;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0,
+    "CRSV" 0.5,
+    "ELSH" 0,
+    "ELXP" 0;
+}
+
+/* 💬 Paragraf & span pakai Courier Prime */
+p, a, div {
+  font-family: "Courier Prime", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Optional – Bold dan italic behavior */
+p strong {
+  font-weight: 700;
+}
+
+p em {
+  font-style: italic;
+}
+
+.bitcount-grid-single {
+  font-family: "Bitcount Grid Single", system-ui;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0,
+    "CRSV" 0.5,
+    "ELSH" 0,
+    "ELXP" 0;
+}
+
+.courier-prime-regular {
+  font-family: "Courier Prime", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.courier-prime-bold {
+  font-family: "Courier Prime", monospace;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.courier-prime-regular-italic {
+  font-family: "Courier Prime", monospace;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.courier-prime-bold-italic {
+  font-family: "Courier Prime", monospace;
+  font-weight: 700;
+  font-style: italic;
+}
+
+
+        /* Animasi pulse dengan blur */
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 0.7;
+                filter: blur(0);
+            }
+
+            50% {
+                transform: scale(1.5);
+                opacity: 0.4;
+                filter: blur(4px);
+            }
+
+            100% {
+                transform: scale(1.8);
+                opacity: 0;
+                filter: blur(8px);
+            }
+        }
+
+        /* Efek bulat saat tap */
+        .tap-effect:active::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+            animation: pulse 0.5s ease-out;
+        }
+    </style>
+</head>
+
+<body class="antialiased bg-black text-white" x-data="{ isOpen: false, scrolled: false }" @scroll.window="scrolled = window.scrollY > 0">
+
+<!-- Header -->
+<header id="header" class="fixed top-0 w-full z-50 transition-all duration-500 ease-in-out bg-transparent">
+    <div class="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between">
+        <!-- Logo -->
+        <a href="/" class="text-2xl font-bold">
+            <img src="img/dozin.png" alt="Logo" class="h-10">
+        </a>
+
+        <!-- Menu Text + Hamburger -->
+        <div class="flex items-center gap-2">
+            <span class="text-sm font-medium tracking-wide">MENU</span>
+            <button id="menuButton" class="relative p-2 hover:bg-neutral-500/10 hover:rounded-full focus:outline-none z-50">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+</header>
+
+    <!-- Overlay -->
+    <div id="overlay" class="fixed inset-0 bg-black/50 z-40 opacity-0 invisible transition-opacity"></div>
+
+    <!-- Menu Slide-in -->
+    <div id="menu" class="fixed inset-y-0 right-0 bg-black text-white shadow-lg z-50 transform translate-x-full transition-transform 
+                     w-full md:w-64 md:max-w-[320px]">
+        <!-- Close Button -->
+        <button id="closeButton" class="absolute top-2 right-4 bg-neutral-800/60 p-2 rounded-full">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+
+<!-- Menu Items -->
+<nav class="mt-16 space-y-1 px-6">
+    <a href="/about-us" class="block py-3 text-lg font-bold uppercase text-white hover:text-gray-300 transition no-underline">Company</a>
+    <a href="/project" class="block py-3 text-lg font-bold uppercase text-white hover:text-gray-300 transition no-underline">Project</a>
+    <a href="/software" class="block py-3 text-lg font-bold uppercase text-white hover:text-gray-300 transition no-underline">Software</a>
+    <a href="/AI" class="block py-3 text-lg font-bold uppercase text-white hover:text-gray-300 transition no-underline">Artificial Intelligence</a>
+    <a href="/RND" class="block py-3 text-lg font-bold uppercase text-white hover:text-gray-300 transition no-underline">Research & Development</a>
+    <a href="/services" class="block py-3 text-lg font-bold uppercase text-white hover:text-gray-300 transition no-underline">Services</a>
+    <a href="/contact" class="block py-3 text-lg font-bold uppercase text-white hover:text-gray-300 transition no-underline">Contact</a>
+</nav>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const header = document.getElementById("header");
+            const menu = document.getElementById("menu");
+            const overlay = document.getElementById("overlay");
+            const menuButton = document.getElementById("menuButton");
+            const closeButton = document.getElementById("closeButton");
+
+            // Scroll effect buat transparan-to-blur
+            window.addEventListener("scroll", function() {
+                if (window.scrollY > 50) {
+                    header.classList.add("backdrop-blur-lg", "bg-neutral-900/70", "shadow-lg");
+                } else {
+                    header.classList.remove("backdrop-blur-lg", "bg-neutral-900/70", "shadow-lg");
+                }
+            });
+
+            // Function buat toggle menu
+            function toggleMenu(show) {
+                if (show) {
+                    menu.classList.remove("translate-x-full");
+                    overlay.classList.remove("opacity-0", "invisible");
+                } else {
+                    menu.classList.add("translate-x-full");
+                    overlay.classList.add("opacity-0", "invisible");
+                }
+            }
+
+            // Event listener buat buka/tutup menu
+            menuButton.addEventListener("click", () => toggleMenu(true));
+            closeButton.addEventListener("click", () => toggleMenu(false));
+            overlay.addEventListener("click", () => toggleMenu(false));
+        });
+    </script>
+
+
 
 <!-- Hero Section -->
 <section id="hero" style="position:relative;width:100%;height:100vh;overflow:hidden;">
@@ -428,3 +735,58 @@ typeLine();
         </div>
     </div>
 </section>
+
+
+<!-- Footer -->
+<footer class="bg-black text-white pb-10 text-left p-6 text-xs border-t-4 border-white">
+  <div class="flex flex-col pt-2 md:flex-row md:justify-between md:items-start space-y-6 md:space-y-0">
+
+    <!-- Bagian Signup -->
+    <div class="order-1 flex flex-col items-start space-y-2 md:w-1/2">
+      <p class="text-xs leading-none text-white">
+        Subscribe for updates from Dozin Company
+      </p>
+
+      <div class="flex flex-col items-start w-full">
+        <div class="flex justify-start items-center space-x-2 w-full">
+          <input
+            type="email"
+            placeholder="Email"
+            class="bg-transparent border-b-[1.3px] border-white outline-none text-gray-400 placeholder-gray-500 px-2 py-1 w-full md:w-3/5 text-xs pb-2"
+          >
+          <button class="text-white pl-2 font-bold text-md flex items-center space-x-1 hover:opacity-80 transition">
+            <span>SUBSCRIBE</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/>
+            </svg>
+          </button>
+        </div>
+        <p class="text-xs mt-4 leading-none text-white">
+          By clicking Subscribe, you agree to our <span class="font-bold">Privacy Policy</span>
+        </p>
+      </div>
+    </div>
+
+    <!-- Bagian Menu List + Info Perusahaan -->
+    <div class="order-2 flex flex-col items-start text-left space-y-3 md:items-end md:text-right md:w-1/2 text-white">
+
+      <!-- Menu List -->
+      <ul class="flex flex-col md:flex-row md:space-x-4 space-y-2 md:space-y-0">
+        <li><a href="/careers" class="hover:opacity-80 no-underline text-white">Careers</a></li>
+        <li><a href="/p/privacy&legal" class="hover:opacity-80 no-underline text-white">Privacy & Legal</a></li>
+        <li><a href="/p/rivacypreferences" class="hover:opacity-80 no-underline text-white">Privacy Preferences</a></li>
+        <li><a href="/contact" class="hover:opacity-80 no-underline text-white">Contact</a></li>
+      </ul>
+
+      <!-- Semua info perusahaan ditumpuk vertikal -->
+      <div class="flex flex-col items-start md:items-end text-left md:text-right space-y-1 text-white">
+        <p class="leading-none">Dozin Company © 2025</p>
+        <p class="leading-none">Part of The Ahtera Group</p>
+      </div>
+    </div>
+
+  </div>
+</footer>
+</body>
+
+</html>
